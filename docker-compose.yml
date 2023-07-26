@@ -8,6 +8,8 @@ services:
       - ./spring_prj:/workspace
     working_dir: /workspace
     tty: true
+    depends_on:
+      - db # 「db」の後で起動
     
 
   db:

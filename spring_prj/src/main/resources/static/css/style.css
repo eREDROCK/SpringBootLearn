@@ -1,0 +1,40 @@
+/* 
+** The Header Media Queries **
+** Tweak as per your needs **
+*/
+
+.container-fluid{
+  display: flex;
+}
+/* .navbar-nav me-auto mb-2 mb-lg-0{
+  height: 45px;
+} */
+
+.navbar-collapse {
+  z-index: 1000;
+}
+
+.card mb-3{
+  padding: 20px;
+}
+.listform{
+  padding: 20px;
+}
+
+.indexmain{
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  /* box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5); */
+  text-decoration-color: aliceblue;
+  padding: 30px;
+
+}
+
+.lead{
+  font-size: 30px;
+  color: white;
+}
+
+.bodyback{
+  background-color: darkblue;
+}
+

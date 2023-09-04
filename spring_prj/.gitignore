@@ -44,7 +44,7 @@ out/
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 .env
-./spring_prj/src/main/resources/application.properties
+spring_prj/src/main/resources/application.properties
 
 # Local History for Visual Studio Code
 .history/

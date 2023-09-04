@@ -1,5 +1,6 @@
 HELP.md
 .gradle
+.env
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
@@ -43,7 +44,7 @@ out/
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
-.env
+
 /src/main/resources/application.properties
 
 # Local History for Visual Studio Code

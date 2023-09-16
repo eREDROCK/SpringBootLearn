@@ -4,16 +4,26 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
-
+import com.example.demo.UserRequest;
 @Service
-public class UserService {
+@Transactional(rollbackFor=Exception.class)
+publi class UserService{
     @Autowired
     private UserRepository userRepository;
 
-    public List<User> getUsers() {
+    public List<User>searchAll(){
         return userRepository.findAll();
+    }
+
+    public void create(UserRequest userRequest){
+        User user=new User();
+        user.setName(userRequest.getName());
+        user.setEmail(userRequest.getEmail());
+        user.setPassword(user.getPassword());
+        userRepository.save(user);
     }
 }

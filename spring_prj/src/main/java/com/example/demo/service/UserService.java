@@ -11,7 +11,7 @@ import com.example.demo.repository.UserRepository;
 import com.example.demo.UserRequest;
 @Service
 @Transactional(rollbackFor=Exception.class)
-publi class UserService{
+public class UserService{
     @Autowired
     private UserRepository userRepository;
 

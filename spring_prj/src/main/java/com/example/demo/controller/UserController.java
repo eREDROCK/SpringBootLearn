@@ -19,7 +19,7 @@ public class UserController {
 
     @GetMapping
     public String index(Model model) {
-        List<User> users = userService.getUsers();
+        List<User> users = userService.searchAll();
         model.addAttribute("users", users);
         return "users/index";
     }

@@ -19,6 +19,8 @@ public class RegisterController {
 
     @GetMapping
     public String index(Model model) {
+        List<User> users = userService.searchAll();
+        model.addAttribute("users", users);
         return "pokecalist/register";
     }
 }

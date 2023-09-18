@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
-import com.example.demo.UserRequest;
+import com.example.demo.request.UserRequest;
 @Service
 @Transactional(rollbackFor=Exception.class)
 public class UserService{

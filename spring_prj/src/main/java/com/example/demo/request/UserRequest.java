@@ -2,9 +2,8 @@ package com.example.demo.request;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 import lombok.Data;
 
@@ -20,13 +19,13 @@ public class UserRequest implements Serializable {
   @Size(max = 50, message = "名前は50字以内で入力してください")
   private String name;
   /**
-   * 住所
+   * メール
    */
-  @Size(max = 255, message = "住所は255桁以内で入力してください")
+  @NotEmpty(message = "メールアドレスを入力してください")
   private String email;
   /**
-   * 電話番号
+   * パスワード
    */
-  @Size()
+  @NotEmpty(message = "パスワードを入力してください")
   private String password;
 }

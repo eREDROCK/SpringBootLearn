@@ -14,10 +14,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="user : ${users}" th:object="${user}">
+            <tr th:each="user : ${userlist}" th:object="${user}">
                 <td th:text="*{id}"></td>
                 <td th:text="*{email}"></td>
                 <td th:text="*{name}"></td>
+                <td th:text="*{password}"></td>
             </tr>
         </tbody>
     </table>

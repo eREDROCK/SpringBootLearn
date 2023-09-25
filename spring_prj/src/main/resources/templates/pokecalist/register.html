@@ -17,19 +17,23 @@
   </header>
   <!-- Header End -->
   <!-- main Start -->
+  <div th:if="${validationError}" th:each="error : ${validationError}">
+    <label class="text-danger" th:text="${error}"></label>
+  </div>
+
   <main class="form-signin w-100 m-auto">
-    <form>
+    <form th:action="@{/register/create}" th:object="${userRequest}" th:method="post">
       <h1 class="h3 mb-3 fw-normal">サインアップ</h1>
       <div class="form-floating">
-        <input type="text" class="form-control" id="floatingname" placeholder="Username">
+        <input type="text" class="form-control" id="floatingname" placeholder="Username" th:field="*{name}">
         <label for="floatingname">ユーザーネーム</label>
       </div>
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" th:field="*{email}">
         <label for="floatingInput">メールアドレス</label>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" th:field="*{password}">
         <label for="floatingPassword">パスワード</label>
       </div>
       <button class="btn btn-primary w-100 py-2" type="submit">登録</button>

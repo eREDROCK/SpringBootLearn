@@ -11,10 +11,11 @@
                 <th>ID</th>
                 <th>メールアドレス</th>
                 <th>名前</th>
+                <th>パスワード</th>
             </tr>
         </thead>
         <tbody>
-            <tr th:each="user : ${userlist}" th:object="${user}">
+            <tr th:each="user:${userlist}" th:object="${user}">
                 <td th:text="*{id}"></td>
                 <td th:text="*{email}"></td>
                 <td th:text="*{name}"></td>

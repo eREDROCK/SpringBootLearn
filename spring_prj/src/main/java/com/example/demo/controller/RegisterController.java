@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import lombok.RequiredArgsConstructor;
 
 import com.example.demo.entity.User;
 import com.example.demo.service.UserService;
@@ -20,9 +21,9 @@ import com.example.demo.request.UserRequest;
 
 
 @Controller
+@RequiredArgsConstructor
 public class RegisterController{
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
     @GetMapping(value="/register")
     public String displayRegister(Model model){
@@ -37,7 +38,7 @@ public class RegisterController{
         return "users/index";
   }
 
-  @RequestMapping(value="/register/create", method=RequestMethod.POST)
+  @RequestMapping(value="/register", method=RequestMethod.POST)
   public String create(@Validated @ModelAttribute UserRequest userRequest, BindingResult result, Model model){
     if(result.hasErrors()){
         List<String>errorList=new ArrayList<String>();
@@ -45,8 +46,10 @@ public class RegisterController{
             errorList.add(error.getDefaultMessage());
         }
         model.addAttribute("validationError",errorList);
+        model.addAttribute("userRequest", userRequest);
         return "/register";
     }
+
     userService.create(userRequest);
     return "redirect:/list";
   }

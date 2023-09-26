@@ -22,7 +22,7 @@
   </div>
 
   <main class="form-signin w-100 m-auto">
-    <form th:action="@{/register/create}" th:object="${userRequest}" th:method="post">
+    <form th:action="@{/register}" th:object="${userRequest}" th:method="post">
       <h1 class="h3 mb-3 fw-normal">サインアップ</h1>
       <div class="form-floating">
         <input type="text" class="form-control" id="floatingname" placeholder="Username" th:field="*{name}">
